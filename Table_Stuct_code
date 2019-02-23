@@ -1,0 +1,134 @@
+(Table Structure With Code(SQL-Server))
+(For Insertion Purpose Only(That's Why Not used More Constraints))
+
+create table Team_user
+(User_Id int not null primary key,
+ User_nm varchar(30) not null,
+ User_phone int(10),
+ User_mail varchar(30) not null,
+ Us_team_id varchar(30) not null,
+ User_city varchar(30) not null,
+ User_state varchar(30) not null,
+ User_sport varchar(30) not null
+);
+
+insert into Team_user values ('101','Anurag','9166653264','anuragdubey1166@gmail.com',
+'nsa30791','Banglore','Karnataka','Taekwando')
+insert into Team_user values ('102','swarup','9165653264','ckteam2548@gmail.com',
+'poi5485','Banglore','Karnataka','cricket')
+insert into Team_user values ('103','mohit','9166653216','cricket2584@gmail.com',
+'isi5875','Banglore','Karnataka','cricket')
+insert into Team_user values ('104','sagar','9166655486','belong68@gmail.com',
+'raw5975','Banglore','Karnataka','cricket')
+insert into Team_user values ('105','rahul','9166652567','wewon54@gmail.com',
+'cia5894','Mysore','Karnataka','cricket')
+insert into Team_user values ('106','dhirendra','9166651549','rightplay5487@gmail.com',
+'nasa8759','manglore','Karnataka','cricket')
+insert into Team_user values ('107','iitc','9166652548','poloteam@gmail.com',
+'nisa7854','hubli','Karnataka','football')
+insert into Team_user values ('108','Dilip','9166658972','deaca8759th@gmail.com',
+'mi6598','Mysore','Karnataka','football')
+insert into Team_user values ('109','Devendra','9166651567','morning5486@gmail.com',
+'mars2568','shimoga','Karnataka','football')
+insert into Team_user values ('110','Nittr','9166653648','hardplay66@gmail.com',
+'alien8975','Belgum','Karnataka','Hockey')
+======================================================================================================================================================================================
+create table Booking
+(Book_Id Bigint not null primary key,
+ Book_for_date date not null,
+ Book_event_name varchar(30) not null,
+ Book_U_id varchar(30) not null,
+ Us_team_id varchar(30) not null,
+ Book_kit_id varchar(30),
+ Bk_team_opp_id varchar(30) not null,
+ Book_for_sport varchar(30) not null,
+ Book_part varchar(30) not null
+);
+
+
+insert into Booking values ('524682','06jan2019','IPL','102','poi5485',
+'crick_26','isi5875','cricket','Pitch_1')
+insert into Booking values ('246819','08jan2019','IPL','106','nasa8759',
+'crick_26','raw5975','cricket','Pitch_2')
+insert into Booking values ('524672','10jan2019','IPL','105','cia5894',
+'crick_26','poi5485','cricket','Pitch_3')
+insert into Booking values ('201650','12jan2019','IPL','104','raw5975',
+'crick_26','cia5894','cricket','Pitch_2')
+insert into Booking values ('302160','16jan2019','IPL_Finale','103','isi5875',
+'crick_26','nasa8759','cricket','Pitch_1')
+insert into Booking values ('265492','20jan2019','TKD_MANIA','101','nsa30791',
+'TKD_kit_56','State_Leval','Taekwando','Hall1')
+insert into Booking values ('346005','24jan2019','Big_cup','107','isi5875',
+'Football','mars2568','football','Ground1')
+insert into Booking values ('206901','01jan2019','Big_cup','108','mi6598',
+'Football','isi5875','football','ground2')
+insert into Booking values ('400835','26jan2019','Big_cup_Finale','109','mars2568',
+'Football','isi5875','football','Ground1')
+insert into Booking values ('201645','29jan2019','Practice_match','110','alien8975',
+'NULL','Practice','Hockey','Ground_2')
+
+======================================================================================================================================================================================
+create table Teams
+(team_Id varchar(30) not null primary key,
+ team_nm varchar(30) not null
+ );
+
+Insert into Teams values 
+('nsa30791','Fightclub'),
+('poi5485','Devilhouse'),
+('isi5875','Roundclub'),
+('raw5975','Davhhouse'),
+('cia5894','sixkings'),
+('nasa8759','whitehorse'),
+('nisa7854','Kotaclub'),
+('mi6598','DareSocs'),
+('mars2568','Footfight'),
+('alien8975','hockeybees')
+
+======================================================================================================================================================================================
+create table Team_members
+(team_Id varchar(30) not null,
+ member_nm varchar(30) not null,
+ member_phone Bigint
+ );
+Insert into Team_members values 
+('nsa30791','Anurag',9166652648),('nsa30791','Finch',9166452964),
+('nsa30791','Laxman',9166655678),('nsa30791','Vicky',9166655426),
+('poi5485','dilip',9166653264),('poi5485','swarup',9526753264),
+('isi5875','achal',9166653264),('isi5875','bharat',9126783264),
+('raw5975','sagar',9166653264),('raw5975','mohit',91645826464),
+('cia5894','sonu',9166653264),('cia5894','rohit',9166456824),
+('nasa8759','dhrendra',9166653264),('nasa8759','sahin',9956723264),
+('poi5485','monu',9166653264),('poi5485','prakash',916669571),
+('nisa7854','prateek',9166653264),('piyush','swarup',9165973264),
+('mi6598','shashank',9166653264),('mi6598','ronit',9166895464),
+('mars2568','Harry',9166653264),('mars2568','viskin',965943264),
+('poi5485','elias',9166653264),('John','vinay',9166665764)
+====================================================================================================================================================================================
+create table KIT_ORDERS
+(KIT_Id varchar(30) not null,
+ bOOK_Id varchar(30) not null,
+ kIT_NM varchar(30) not null,
+ kIT_price int,
+ kit_family varchar(30) not null
+ );
+
+Insert into KIT_ORDERS values 
+('Ho_kit_21','201645','Hockey_kit','5468','Hockey'),
+('Football','201650','Football_kit','6985','Football'),
+('crick_26','206901','cricket_kit','9857','cricket'),
+('crick_26','246819','cricket_kit','4576','cricket'),
+('TKD_kit_56','265492','TKD_kit','6541','TKD'),
+('crick_26','302160','cricket_kit','2658','cricket'),
+('Football','346005','Football_kit','2564','Football'),
+('Football','400835','Football_kit','2458','Football'),
+('crick_26','524672','cricket_kit','6584','cricket'),
+('crick_26','524682','cricket_kit','1547','cricket')
+
+
+
+
+
+
+
+

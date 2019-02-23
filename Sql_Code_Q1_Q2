@@ -1,0 +1,25 @@
+Quiz1=>Find people who play the same sport in the same city
+
+Answer=>SELECT TMB.member_nm,US.User_city 
+          FROM TEAM_USER US JOIN TEAMS TM
+               ON US.US_TEAM_ID=TM.TEAM_ID
+                JOIN TEAM_MEMBERS TMB
+               ON TM.TEAM_ID=TMB.TEAM_ID
+
+               (Data is in Excel Sheet SCSS(Same Sport Same City))
+
+Quiz2=>fIND THE PEOPLE (PERSON) WHO BUY equipment to play their sports
+
+Answer2=>SELECT ts.USER_NM,bo.book_KIT_id
+           FROM BOOKING bo join team_user ts
+         on ts.user_id=bo.book_u_id
+
+     EXCEPT
+        
+        SELECT ts.USER_NM,bo.book_KIT_id
+          FROM BOOKING bo join team_user ts
+           on ts.user_id=bo.book_u_id
+        WHERE
+           book_KIT_id='NO'
+
+           (Data is in Excel Sheet Byequip(People Who Buys Equipment))
